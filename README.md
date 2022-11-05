@@ -1,4 +1,4 @@
-# everycoincounts
+# Every Coin Counts
 
 ## The Problem ⚠️
 
