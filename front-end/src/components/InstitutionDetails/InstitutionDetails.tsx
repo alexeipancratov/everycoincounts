@@ -45,8 +45,7 @@ export default function InstitutionDetails() {
               <Form.Control type="number" placeholder="Amount in wei" value={0.001} />
             </Form.Group>
             <Button variant="primary" type="submit">
-              <i className="bi bi-currency-bitcoin"></i>
-              Donate
+              🫶 Donate
             </Button>
           </Form>
         </Col>
