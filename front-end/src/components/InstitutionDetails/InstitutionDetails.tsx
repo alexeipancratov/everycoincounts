@@ -1,4 +1,4 @@
-import { Button, Card, Col, Form, FormGroup, FormLabel, Row } from "react-bootstrap";
+import { Button, Card, Col, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function InstitutionDetails() {
