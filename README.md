@@ -1,14 +1,14 @@
-![ECC Hero](https://ipfs.io/ipfs/QmWUD7QsNxkepPWPXArTcCNm26hnsd5REF432dZGhTbp39?filename=ECC_Hero.webp)
+![ECC Hero](https://ipfs.io/ipfs/QmWUD7QsNxkepPWPXArTcCNm26hnsd5REF432dZGhTbp39?filename=ECC_Hero.webp "Every Coin Counts")
 
 # Every Coin Counts
 
 ## The Problem ⚠️
 
-Give institutions and non profit organizations the ability to receive donations in crypto, and spend it for their causes.
+Give institutions and non-profit organizations the ability to receive donations in crypto, and spend it for their causes.
 
 ## Solution 🔮
 
-An Open Source Code to support institutions and non profit organizations to do good and help important causes providing access to the web3 space.
+An Open Source Code to support institutions and non-profit organizations to do good and help important causes providing access to the web3 space.
 A blockchain solution that also offers a safe platform for donators to contribute with serius projects that impacts people's life and can change histories.
 
 ## How 👷🏻
@@ -18,7 +18,7 @@ Using smart contract deployed on the most relevant networks like Ethereum and Po
 ## Developers 🧑🏻‍💻
 
 - Alexandre Barros (blockchain@alexandrebarros.com)
-- Alexei Pancratov (driversgear@gmail.com)
+- Alexei Pancratov (drivergear@gmail.com)
 
 ## Licence
 
