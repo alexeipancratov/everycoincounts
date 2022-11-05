@@ -24,7 +24,7 @@ export default function InstitutionsList() {
         {institutions.map((inst) => (
           <Col key={inst._id}>
             <Card style={{ width: "20rem" }}>
-              <Link to="1">
+              <Link to={inst._id}>
                 <Card.Img variant="top" src={`https://ipfs.io/ipfs/${inst.avatarKey}`} />
               </Link>
               <Card.Body>

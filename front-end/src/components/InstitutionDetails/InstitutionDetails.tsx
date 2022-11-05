@@ -1,23 +1,32 @@
+import { useEffect, useState } from "react";
 import { Button, Card, Col, Form, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import Institution from "../../models/institution";
+import InstitutionsService from "../../services/institutionsService";
 
 export default function InstitutionDetails() {
+  const { id } = useParams();
+
+  const [institution, setInstitution] = useState<Institution>({} as Institution);
+
+  useEffect(() => {
+    const getInstitution = async () => {
+      const institution = await InstitutionsService.getOne(id || "");
+      setInstitution(institution);
+    };
+
+    getInstitution();
+  }, [id]);
+
   return (
     <>
       <Row>
         <Col>
           <Card>
-            <Link to="1">
-              <Card.Img
-                variant="top"
-                src="https://cdn.buymeacoffee.com/uploads/profile_pictures/2020/11/348df2c9ac273b642918f634ac2d2086.jpg@300w_0e.jpg"
-              />
-            </Link>
+            <Card.Img variant="top" src={`https://ipfs.io/ipfs/${institution.avatarKey}`} />
             <Card.Body>
-              <Card.Title>Creator Name</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </Card.Text>
+              <Card.Title>{institution.name}</Card.Title>
+              <Card.Text>{institution.bio}</Card.Text>
               <i className="bi bi-heart text-danger"></i> 381 donations
               <br />
               <i className="bi bi-currency-bitcoin text-warning"></i> 0.001 ETH donated

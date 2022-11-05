@@ -16,4 +16,10 @@ export default class InstitutionsService {
     if (response.ok) return response.json();
     throw response;
   }
+
+  public static async getOne(id: string): Promise<Institution> {
+    const response = await fetch(InstitutionsService.baseUrl + `institutions/${id}`);
+    if (response.ok) return response.json();
+    throw response;
+  }
 }

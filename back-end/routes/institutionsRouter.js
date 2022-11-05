@@ -15,6 +15,12 @@ function createInstitutionsRouter() {
     });
   });
 
+  institutionsRouter.get("/:id", (req, res) => {
+    Institution.findById(req.params.id, (err, inst) => {
+      res.send(inst);
+    });
+  });
+
   return institutionsRouter;
 }
 
