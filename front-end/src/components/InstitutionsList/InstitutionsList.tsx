@@ -5,9 +5,10 @@ export default function InstitutionsList() {
   return (
     <>
       <h3>Institutions</h3>
+      <p>Help the institutions by donating in crypto. Click on the image to learn more about each of them.</p>
       <Row>
         <Col>
-          <Card style={{ width: "200px" }}>
+          <Card style={{ width: "20rem" }}>
             <Link to="1">
               <Card.Img
                 variant="top"
@@ -19,12 +20,16 @@ export default function InstitutionsList() {
               <Card.Text>
                 Some quick example text to build on the card title and make up the bulk of the card's content.
               </Card.Text>
-              <i className="bi bi-heart"></i> 381 supporters
+              <i className="bi bi-heart text-danger"></i> 381 donations
+              <br />
+              <i className="bi bi-currency-bitcoin text-warning"></i> 0.001 ETH donated
+              <br />
+              <i className="bi bi-shield-check text-success"></i> 9/10 trust index
             </Card.Body>
           </Card>
         </Col>
         <Col>
-          <Card style={{ width: "200px" }}>
+          <Card style={{ width: "20rem" }}>
             <Link to="2">
               <Card.Img
                 variant="top"
@@ -36,12 +41,16 @@ export default function InstitutionsList() {
               <Card.Text>
                 Some quick example text to build on the card title and make up the bulk of the card's content.
               </Card.Text>
-              <i className="bi bi-heart"></i> 101 supporters
+              <i className="bi bi-heart text-danger"></i> 381 donations
+              <br />
+              <i className="bi bi-currency-bitcoin text-warning"></i> 0.001 ETH donated
+              <br />
+              <i className="bi bi-shield-check text-success"></i> 9/10 trust index
             </Card.Body>
           </Card>
         </Col>
         <Col>
-          <Card style={{ width: "200px" }}>
+          <Card style={{ width: "20rem" }}>
             <Link to="3">
               <Card.Img
                 variant="top"
@@ -53,7 +62,11 @@ export default function InstitutionsList() {
               <Card.Text>
                 Some quick example text to build on the card title and make up the bulk of the card's content.
               </Card.Text>
-              <i className="bi bi-heart"></i> 45 supporters
+              <i className="bi bi-heart text-danger"></i> 381 donations
+              <br />
+              <i className="bi bi-currency-bitcoin text-warning"></i> 0.001 ETH donated
+              <br />
+              <i className="bi bi-shield-check text-success"></i> 9/10 trust index
             </Card.Body>
           </Card>
         </Col>
