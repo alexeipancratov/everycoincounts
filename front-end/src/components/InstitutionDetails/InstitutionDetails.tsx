@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Card, Col, Form, Row } from "react-bootstrap";
+import { Button, Card, Col, Form, Row, Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Institution from "../../models/institution";
 import InstitutionsService from "../../services/institutionsService";
@@ -17,6 +17,10 @@ export default function InstitutionDetails() {
 
     getInstitution();
   }, [id]);
+
+  if (!institution) {
+    return <Spinner animation="grow" variant="primary" />;
+  }
 
   return (
     <>
