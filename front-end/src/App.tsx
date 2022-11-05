@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Container, Nav } from "react-bootstrap";
+import { Link, Route, Routes } from "react-router-dom";
+import "./App.css";
+import CreatorDetails from "./components/CreatorDetails/CreatorDetails";
+import CreatorsList from "./components/CreatorsList/CreatorsList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Nav className="bg-light">
+        <Nav.Item>
+          <Link to="creators">Creators</Link>
+        </Nav.Item>
+      </Nav>
+      <Routes>
+        <Route path="/" />
+        <Route path="creators" element={<CreatorsList />} />
+        <Route path="creators/:id" element={<CreatorDetails />} />
+      </Routes>
+    </Container>
   );
 }
 
