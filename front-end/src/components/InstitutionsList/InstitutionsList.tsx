@@ -1,10 +1,10 @@
 import { Card, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export default function CreatorsList() {
+export default function InstitutionsList() {
   return (
     <>
-      <h3>Creators</h3>
+      <h3>Institutions</h3>
       <Row>
         <Col>
           <Card style={{ width: "200px" }}>
@@ -15,7 +15,7 @@ export default function CreatorsList() {
               />
             </Link>
             <Card.Body>
-              <Card.Title>Creator Name</Card.Title>
+              <Card.Title>Institution Name</Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up the bulk of the card's content.
               </Card.Text>
@@ -32,7 +32,7 @@ export default function CreatorsList() {
               />
             </Link>
             <Card.Body>
-              <Card.Title>Creator Name</Card.Title>
+              <Card.Title>Institution Name</Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up the bulk of the card's content.
               </Card.Text>
@@ -49,7 +49,7 @@ export default function CreatorsList() {
               />
             </Link>
             <Card.Body>
-              <Card.Title>Creator Name</Card.Title>
+              <Card.Title>Institution Name</Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up the bulk of the card's content.
               </Card.Text>
