@@ -1,4 +1,4 @@
-https://ipfs.io/ipfs/QmSJLNaBfvBENtZhaE2qAda1jqAG26qyNTngjymSM5jBKr?filename=ECC_Hero.png
+![Hero image] ([https://ipfs.io/ipfs/QmSJLNaBfvBENtZhaE2qAda1jqAG26qyNTngjymSM5jBKr?filename=ECC_Hero.png])
 
 # Every Coin Counts
 
