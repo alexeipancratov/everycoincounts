@@ -25,6 +25,11 @@ Name  | Git Hub | LinkedIn | Twitter | E-mail
 Alexandre Rapchan B. Barros  | [@AleRapchan](https://www.github.com/AleRapchan) | [Alexandre-rapchan](https://www.linkedin.com/in/alexandre-rapchan/) | [@rapchan](https://www.twitter.com/rapchan/) | blockchain@alexandrebarros.com
 Alexei Pancratov  | [@AlexeiPancratov](https://www.github.com/alexeipancratov) | [Alexei-pancratov](https://www.linkedin.com/in/alexei-pancratov-07413b119/) | [@](https://www.twitter.com/) | drivergear@gmail.com
 
+## Links 🌐
+- [UMA Oracle](http://umaproject.org/)
+- [Remix](https://remix.ethereum.org/)
+- [ETH San Francisco](https://sf.ethglobal.com/)
+
 ## MIT License ⚖️
 
 Copyright (c) 2021 Rapchan
