@@ -1,4 +1,4 @@
-<img src="[/repository/assets/employee.png](https://ipfs.io/ipfs/QmWUD7QsNxkepPWPXArTcCNm26hnsd5REF432dZGhTbp39?filename=ECC_Hero.webp)" alt="Every Coin Counts" title="Every Coin Counts">
+[Every Coin Counts] (everycoincounts/front-end/public/ECC-Hero.webp)
 
 
 # Every Coin Counts
