@@ -25,6 +25,16 @@ Name  | Git Hub | LinkedIn | Twitter | E-mail
 Alexandre Rapchan B. Barros  | [@AleRapchan](https://www.github.com/AleRapchan) | [Alexandre-rapchan](https://www.linkedin.com/in/alexandre-rapchan/) | [@rapchan](https://www.twitter.com/rapchan/) | blockchain@alexandrebarros.com
 Alexei Pancratov  | [@AlexeiPancratov](https://www.github.com/alexeipancratov) | [Alexei-pancratov](https://www.linkedin.com/in/alexei-pancratov-07413b119/) | [@](https://www.twitter.com/) | drivergear@gmail.com
 
+## Support
+
+For support, please send an email to blockchain@alexandrebarros.com.
+	
+## Revisions
+Date  |  Revision  |  Description  |  Author
+--------  |  --------  |  --------  |  --------	
+11/04/2022  |  `0.1`  |  First Draft  |  Rapchan and Pancratov
+11/05/2022  |  `0.2`  |  Final Review  |  Rapchan and Pancratov
+
 ## Links 🌐
 - [UMA Optimistic Oracle](http://umaproject.org/)
 - [Remix Ethereum IDE](https://remix.ethereum.org/)
