@@ -15,8 +15,8 @@ function createInstitutionsRouter() {
     });
   });
 
-  institutionsRouter.get("/:id", (req, res) => {
-    Institution.findById(req.params.id, (err, inst) => {
+  institutionsRouter.get("/:username", (req, res) => {
+    Institution.findOne({ username: { $eq: req.params.username } }, (err, inst) => {
       res.send(inst);
     });
   });

@@ -6,17 +6,17 @@ import InstitutionsService from "../../services/institutionsService";
 import DonateToInstitutionForm from "../DonateToInstitutionForm/DonateToInstitutionForm";
 
 export default function InstitutionDetails() {
-  const { id } = useParams();
+  const { username } = useParams();
   const [institution, setInstitution] = useState<Institution>({} as Institution);
 
   useEffect(() => {
     const getInstitution = async () => {
-      const institution = await InstitutionsService.getOne(id || "");
+      const institution = await InstitutionsService.getOne(username || "");
       setInstitution(institution);
     };
 
     getInstitution();
-  }, [id]);
+  }, [username]);
 
   if (!institution) {
     return <Spinner animation="grow" variant="primary" />;

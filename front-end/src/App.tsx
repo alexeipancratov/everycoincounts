@@ -29,7 +29,7 @@ function App() {
         <Routes>
           <Route path="/" />
           <Route path="institutions" element={<InstitutionsList />} />
-          <Route path="institutions/:id" element={<InstitutionDetails />} />
+          <Route path="institutions/:username" element={<InstitutionDetails />} />
         </Routes>
       </Container>
     </>
