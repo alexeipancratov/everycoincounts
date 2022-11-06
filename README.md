@@ -27,7 +27,7 @@ Alexei Pancratov  | [@AlexeiPancratov](https://www.github.com/alexeipancratov) |
 
 ## Links 🌐
 - [UMA Optimistic Oracle](http://umaproject.org/)
-- [Remix](https://remix.ethereum.org/)
+- [Remix Ethereum IDE](https://remix.ethereum.org/)
 - [ETH San Francisco](https://sf.ethglobal.com/)
 
 ## MIT License ⚖️
