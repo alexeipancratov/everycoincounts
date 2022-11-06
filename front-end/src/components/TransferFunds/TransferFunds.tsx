@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Button, Col, Form, FormControl, FormGroup, FormLabel, Modal, Row } from "react-bootstrap";
 import contractAbi from "../../abis/abi.json";
 import SessionService from "../../services/sessionService";
+import TransfersService from "../../services/transfersService";
 
 export default function TransferFunds() {
   const { ethereum } = useMetaMask();
@@ -30,6 +31,14 @@ export default function TransferFunds() {
   };
 
   const sendTransaction = async () => {
+    const result = await TransfersService.makeTransfer({
+      institution: SessionService.getUsername() || "",
+      amount: amount,
+      message: "Standard message",
+      recipient: recipientAddress,
+    });
+    console.log(result);
+
     handleShowSuccessModal();
     clearForm();
   };
@@ -87,7 +96,7 @@ export default function TransferFunds() {
         <Modal.Header closeButton>
           <Modal.Title>Success!</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Thanks for your contribution!</Modal.Body>
+        <Modal.Body>Your funds have been successfully transferred!</Modal.Body>
         <Modal.Footer>
           <Button variant="primary" onClick={handleCloseSuccessModal}>
             Close
