@@ -1,7 +1,5 @@
 ![Every Coin Counts](./front-end/public/ECC-super-hero.png)
 
-# Every Coin Counts
-
 ## Outline of The Problem ⚠️
 
 Give institutions and non-profit organizations the ability to receive donations in crypto, and spend it for their causes.
