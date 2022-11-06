@@ -1,24 +1,38 @@
 import React from "react";
-import { Container, Nav } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import InstitutionDetails from "./components/InstitutionDetails/InstitutionDetails";
 import InstitutionsList from "./components/InstitutionsList/InstitutionsList";
+import WalletConnector from "./components/WalletConnector/WalletConnector";
 
 function App() {
   return (
-    <Container>
-      <Nav className="bg-light">
-        <Nav.Item>
-          <Link to="institions">Institutions</Link>
-        </Nav.Item>
-      </Nav>
-      <Routes>
-        <Route path="/" />
-        <Route path="institions" element={<InstitutionsList />} />
-        <Route path="institions/:id" element={<InstitutionDetails />} />
-      </Routes>
-    </Container>
+    <>
+      <Navbar bg="dark" variant="dark" expand="lg">
+        <Container>
+          <Navbar.Brand href="#home">
+            <i className="bi bi-currency-bitcoin text-warning"></i> EveryCoinCounts
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Link to="institutions" className="nav-link active">
+                Institutions
+              </Link>
+            </Nav>
+            <WalletConnector />
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <Container className="mt-4">
+        <Routes>
+          <Route path="/" />
+          <Route path="institutions" element={<InstitutionsList />} />
+          <Route path="institutions/:id" element={<InstitutionDetails />} />
+        </Routes>
+      </Container>
+    </>
   );
 }
 

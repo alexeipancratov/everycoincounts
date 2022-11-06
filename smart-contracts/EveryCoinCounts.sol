@@ -74,21 +74,21 @@ contract EveryCoinCounts {
     // Top Donators
     address[10] topDonators;    
 
-    constructor(){
+    constructor() {
         owner = msg.sender;
         coinPrice = 1 ;  //gwei
         // maxDonation = 100 ;
         // fee = 10 ;
     }
 
-    modifier onlyOwner (){
+    modifier onlyOwner() {
         require (msg.sender == owner , "Only owner is allowed!");
         _;
     }
 
     /// @notice Returns the amount of leaves the tree has.
     /// @dev Returns only a fixed number.
-    function changeCoinPrice(uint256 _newPrice) public onlyOwner{
+    function changeCoinPrice(uint256 _newPrice) public onlyOwner {
         coinPrice = _newPrice ;  //wei
 
         emit newCoinPrice(
@@ -97,11 +97,7 @@ contract EveryCoinCounts {
         );
     }
 
-    function countThisCoins(string memory _institution, uint256 _coins, string memory _donatorName, string memory _message) public payable {
-        
-        // Verify enough balance to buy slices
-        require (msg.value >= _coins * coinPrice , "Not enought balance to buy slices!");
-        
+    function countTheseCoins(string memory _institution, string memory _donatorName, string memory _message) public payable {
         // Update Donations Counter
         donationsCounter ++;
 
