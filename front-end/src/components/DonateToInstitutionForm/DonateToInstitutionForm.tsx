@@ -53,7 +53,6 @@ export default function DonateToInstitutionForm(props: Props) {
   };
 
   const onFormSubmit = (e: any) => {
-    console.log("ADDR", process.env.REACT_APP_CONTRACT_ADDRESS);
     e.preventDefault();
 
     sendTransaction();

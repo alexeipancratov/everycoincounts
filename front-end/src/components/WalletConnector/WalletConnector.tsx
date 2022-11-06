@@ -21,7 +21,7 @@ export default function WalletConnector() {
   };
 
   return (
-    <Form className="d-flex">
+    <Form>
       {status === "connected" && <label style={{ color: "#fff" }}>MetaMask Connected</label>}
       {status !== "connected" && (
         <Button variant="outline-success" onClick={onConnectClick}>
