@@ -18,6 +18,9 @@ Using smart contract deployed on the most relevant networks like Ethereum and Po
 
 We rely on UMA Optimistic Oracle (https://umaproject.org/) as our decentralized truth machine regulated by their community to validate institutions so donators can be sure that their contributions are spent appropriately and supporting the right causes.
 
+# How to get started
+Donators can deposit any value in the institution that works with the cause. The UMA community will audit the use of the funds.
+
 ## Developers 🧑🏻‍💻
 
 Name  | Git Hub | LinkedIn | Twitter
