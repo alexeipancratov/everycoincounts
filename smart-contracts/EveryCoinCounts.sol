@@ -6,12 +6,16 @@
 /// @dev All function calls are currently implemented without side effects
 /// @custom:experimental This is an experimental contract.
 
+
+import "https://github.com/UMAprotocol/protocol/blob/master/packages/core/contracts/oracle/interfaces/OptimisticOracleV2Interface.sol";
+
+
 pragma solidity ^0.8.7;
 
 contract EveryCoinCounts {
 
     address owner;
-    uint256 public coinPrice;
+    bool locked;
 
     uint256 public institutionsCounter;
     uint256 public donatorsCounter;
@@ -27,6 +31,7 @@ contract EveryCoinCounts {
         uint256 idInstitution;
         uint256 donations;
         uint256 totalBalance;
+        int256 unreliable;
     }
 
     struct donation{
@@ -34,23 +39,16 @@ contract EveryCoinCounts {
         uint256 timestamp;
         address donator; 
         uint256 institution; 
-        uint256 slices; 
-        uint256 slicePrice;
+        uint256 value; 
         string donatorName;
         string message;
     }
-
-    event newInstitution(
-        uint256 indexed timestamp,
-        uint256 indexed _creator
-    );
     
     event donationReceipt(
         uint256 indexed _timestamp, 
         address indexed _donator, 
-        string indexed _institution, 
-        uint256 _slices, 
-        uint256 _slicePrice,
+        string indexed _institution,  
+        uint256 _value,
         string _donatorName,
         string _message
     );
@@ -63,41 +61,38 @@ contract EveryCoinCounts {
         string _message
     );
 
-    event newCoinPrice(
-        uint256 indexed timestamp,
-        uint256 indexed _coinPrice
-    );
-
     mapping(string => institution) public institutions;
-    mapping(address => donator) public donators;
+    mapping(address => donator) public donators; 
 
-    // Top Donators
-    address[10] topDonators;    
+    // Creates an Optimistic Oracle instance at the deployed address on Goerli.
+    OptimisticOracleV2Interface oo = OptimisticOracleV2Interface(0xA5B9d8a0B0Fa04Ba71BDD68069661ED5C0848884);
+    bytes32 identifier = bytes32("YES_OR_NO_QUERY");
+    bytes ancillaryData = bytes("Should this institution be stopped from realizing transactions? (1) YES | (0) NO");
+    uint256 requestTime = 0; // Store the request time so we can re-use it later.
 
-    constructor() {
+
+    constructor(){
         owner = msg.sender;
-        coinPrice = 1 ;  //gwei
-        // maxDonation = 100 ;
-        // fee = 10 ;
     }
 
-    modifier onlyOwner() {
+    modifier onlyOwner (){
         require (msg.sender == owner , "Only owner is allowed!");
         _;
     }
 
-    /// @notice Returns the amount of leaves the tree has.
-    /// @dev Returns only a fixed number.
-    function changeCoinPrice(uint256 _newPrice) public onlyOwner {
-        coinPrice = _newPrice ;  //wei
-
-        emit newCoinPrice(
-            block.timestamp,
-            coinPrice
-        );
+    modifier nonReentrant() {
+        require (!locked, "No re-entrancy");
+        locked = true;
+        _;
+        locked = false;
     }
 
+    /// @notice Returns if the institution is trustworth and ...
+    /// @dev Returns only a fixed number. (this is a COMMENT EXAMPLE)
     function countTheseCoins(string memory _institution, string memory _donatorName, string memory _message) public payable {
+        
+        require (msg.value >= 1 , "You need to donate at least 1 wei!");
+        
         // Update Donations Counter
         donationsCounter ++;
 
@@ -120,8 +115,7 @@ contract EveryCoinCounts {
             block.timestamp, 
             _donator, 
             _institution, 
-            _coins, 
-            coinPrice,
+            msg.value,
             _donatorName,
             _message
         );
@@ -129,8 +123,15 @@ contract EveryCoinCounts {
     }
 
     function transfer(string memory _institution , address _to, uint256 _amount, string memory _message) public onlyOwner{
-        // Verify enough balance to transfer
-	    require (institutions[_institution].totalBalance >= _amount, "No balance for the creator");
+
+	    require (institutions[_institution].totalBalance >= _amount, "No balance for the institution");
+        require (institutions[_institution].unreliable == 0 , "This institution was marked as unreliable in realizing transactions.");
+        
+        requestData(); // propose to UMA Comunity to evaluate if the institution still reliable
+
+        institutions[_institution].unreliable = getSettledData();
+        require (institutions[_institution].unreliable == 0 , "This institution was marked as unreliable in realizing transactions.");
+
         institutions[_institution].totalBalance -= _amount;
         payable(_to).transfer(_amount);
 
@@ -141,23 +142,38 @@ contract EveryCoinCounts {
             _amount,
             _message
         );
+    }
 
-	}
+    // Submit a data request (requestData) to the Optimistic Oracle. 
+    function requestData() internal { 
+        
+        requestTime = block.timestamp;  // Set the request time to the current block time.
+        IERC20 bondCurrency = IERC20 (0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6);
+        uint256 reward = 0; // Set the reward to 0 (so we dont have to fund it from this contract).
 
-    function transferAll(string memory _institution , address _to) public onlyOwner{
-        // Verify enough balance to transfer
-	    require (institutions[_institution].totalBalance > 0 , "No balance for the creator");
-        uint256 balance = institutions[_institution].totalBalance;
-        institutions[_institution].totalBalance = 0;
-        payable(_to).transfer(balance);
-	}
+        // Now, we make the data request to the Optimistic Oracle and set the liveness to 30 sec.
+        oo.requestPrice(identifier, requestTime, ancillaryData, bondCurrency, reward);
+        oo.setCustomLiveness(identifier, requestTime, ancillaryData, 30);
+        // setCallbacks
+    }
+
+    // Settle the request once it's gone through the liveness period of 30 seconds.
+    // In a real world use of the Optimistic Oracle this should be longer to give time to disputers
+    function settleRequest() internal {
+        oo.settle(address(this), identifier, requestTime, ancillaryData);
+    }
+
+    // Fetch the resolved price from the Optimistic Oracle that was settled.
+    function getSettledData() internal view returns (int256){
+        return oo.getRequest(address(this), identifier, requestTime, ancillaryData).resolvedPrice;
+    }
 
     receive() external payable {
             // React to receiving ether
     }
 
     fallback() external payable {
-
+        //dataSettled();
     }
 
 }
