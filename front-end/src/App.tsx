@@ -12,9 +12,11 @@ import SessionService from "./services/sessionService";
 function App() {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar variant="dark" expand="lg" style={{ backgroundColor: "#68349A" }}>
         <Container>
-          <Navbar.Brand href="#home">🫶 Every Coin Counts</Navbar.Brand>
+          <Navbar.Brand href="#home">
+            <img src="/logo.png" height={35} alt="logo" />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -29,7 +31,7 @@ function App() {
             </Nav>
             <div className="d-flex">
               {!SessionService.isAuthenticated() && (
-                <Link to="login" className="btn btn-outline-secondary text-white">
+                <Link to="login" className="btn btn-outline-primary text-white">
                   Sign In as Institution
                 </Link>
               )}

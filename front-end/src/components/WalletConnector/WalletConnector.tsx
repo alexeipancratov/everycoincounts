@@ -22,7 +22,11 @@ export default function WalletConnector() {
 
   return (
     <Form>
-      {status === "connected" && <label style={{ color: "#fff" }}>MetaMask Connected</label>}
+      {status === "connected" && (
+        <label style={{ color: "#fff" }}>
+          <i className="bi bi-wallet2"></i> MetaMask Connected
+        </label>
+      )}
       {status !== "connected" && (
         <Button variant="outline-success" onClick={onConnectClick}>
           {getButtonText()}

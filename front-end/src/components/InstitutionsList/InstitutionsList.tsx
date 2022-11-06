@@ -18,8 +18,17 @@ export default function InstitutionsList() {
 
   return (
     <>
-      <h3>Institutions</h3>
-      <p>Help the institutions by donating in crypto. Click on the image to learn more about each of them.</p>
+      <Row>
+        <Col>
+          <h2>Institutions</h2>
+          <p>Help the institutions by donating in crypto. Click on the image to learn more about each of them.</p>
+        </Col>
+        <Col className="text-end">
+          <p style={{ fontSize: "0.9rem" }}>
+            Institutions' trustworthiness verified by <img src="/UMA-logo.png" alt="UMA-oracle" height={20} />
+          </p>
+        </Col>
+      </Row>
       <Row>
         {institutions.length === 0 && <Spinner animation="grow" variant="primary" />}
         {institutions.length > 0 &&
@@ -36,7 +45,6 @@ export default function InstitutionsList() {
                   <br />
                   <i className="bi bi-currency-bitcoin text-warning"></i> 0.001 ETH donated
                   <br />
-                  <i className="bi bi-shield-check text-success"></i> Verified by UMA oracle
                   <p className="mt-3">Category: {inst.category}</p>
                 </Card.Body>
               </Card>

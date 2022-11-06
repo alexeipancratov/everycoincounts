@@ -60,7 +60,7 @@ export default function DonateToInstitutionForm(props: Props) {
 
   return (
     <>
-      <h5>Donate</h5>
+      <h3>Donate</h3>
       <Form onSubmit={onFormSubmit}>
         <Form.Group className="mb-3" controlId="formDonatorName">
           <Form.Label>{`Name (optional)`}</Form.Label>
