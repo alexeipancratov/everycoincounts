@@ -1,7 +1,4 @@
-![Every Coin Counts](./front-end/public/ECC-Hero.webp)
-
-
-# Every Coin Counts
+![Every Coin Counts](./front-end/public/ECC-super-hero.png)
 
 ## Outline of The Problem ⚠️
 
