@@ -21,7 +21,7 @@ export default function InstitutionLogin() {
     const result = await UsersService.login({ username, password });
 
     if (result) {
-      SessionService.storeToken(result.token);
+      SessionService.storeSessionData(result.token, username);
       navigate("/institutions");
     }
   };
