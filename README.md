@@ -32,7 +32,7 @@ Alexei Pancratov  | [@AlexeiPancratov](https://www.github.com/alexeipancratov) |
 
 ## MIT License ⚖️
 
-Copyright (c) 2021 Rapchan
+Copyright (c) 2021 Rapchan and Pancratov
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
