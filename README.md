@@ -40,8 +40,6 @@ Date  |  Revision  |  Description  |  Author
 - [Remix Ethereum IDE](https://remix.ethereum.org/)
 - [ETH San Francisco](https://sf.ethglobal.com/)
 
-## Presentation
-Presentation file: (./front-end/public/ECC.pdf)
 
 ## MIT License ⚖️
 
