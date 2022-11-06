@@ -20,14 +20,10 @@ We rely on UMA Optimistic Oracle (https://umaproject.org/) as our decentralized 
 
 ## Developers 🧑🏻‍💻
 
-Name  | Git Hub | LinkedIn | Twitter
+Name  | Git Hub | LinkedIn | Twitter | E-mail
 ------------- | ------------- | ------------- | -------------
-Alexandre Rapchan B. Barros  | [@AleRapchan](https://www.github.com/AleRapchan) | [Alexandre-rapchan](https://www.linkedin.com/in/alexandre-rapchan/) | [@rapchan](https://www.twitter.com/rapchan/) 
-Alexei Pancratov  | [@AlexeiPancratov](https://www.github.com/alexeipancratov) | [Alexandre-rapchan](https://www.linkedin.com/in/alexandre-rapchan/) | [@rapchan](https://www.twitter.com/rapchan/) 
-
-
-- Alexandre Barros (blockchain@alexandrebarros.com)
-- Alexei Pancratov (drivergear@gmail.com)
+Alexandre Rapchan B. Barros  | [@AleRapchan](https://www.github.com/AleRapchan) | [Alexandre-rapchan](https://www.linkedin.com/in/alexandre-rapchan/) | [@rapchan](https://www.twitter.com/rapchan/) | blockchain@alexandrebarros.com
+Alexei Pancratov  | [@AlexeiPancratov](https://www.github.com/alexeipancratov) | [Alexei-pancratov](https://www.linkedin.com/in/alexei-pancratov-07413b119/) | [@](https://www.twitter.com/) | drivergear@gmail.com
 
 ## MIT License
 
