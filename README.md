@@ -41,7 +41,7 @@ Date  |  Revision  |  Description  |  Author
 - [ETH San Francisco](https://sf.ethglobal.com/)
 
 ## Presentation
-![Presentation](./front-end/public/ECC.pdf)
+Presentation file: (./front-end/public/ECC.pdf)
 
 ## MIT License ⚖️
 
