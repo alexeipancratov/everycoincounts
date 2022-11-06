@@ -1,4 +1,4 @@
-[Every Coin Counts] (./front-end/public/ECC-Hero.webp)
+![Every Coin Counts](./front-end/public/ECC-Hero.webp)
 
 
 # Every Coin Counts
