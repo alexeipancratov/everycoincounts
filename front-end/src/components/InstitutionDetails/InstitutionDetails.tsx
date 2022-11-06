@@ -35,7 +35,7 @@ export default function InstitutionDetails() {
               <br />
               <i className="bi bi-currency-bitcoin text-warning"></i> 0.001 ETH donated
               <br />
-              <i className="bi bi-shield-check text-success"></i> 9/10 trust index
+              <i className="bi bi-shield-check text-success"></i> Verified by UMA oracle
             </Card.Body>
           </Card>
         </Col>
