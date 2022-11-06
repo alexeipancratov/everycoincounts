@@ -13,6 +13,7 @@
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.9.1",
     "dotenv": "^10.0.0",
+    "ethers": "^5.7.2",
     "metamask-react": "^2.4.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",

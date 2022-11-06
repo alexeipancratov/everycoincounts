@@ -40,7 +40,7 @@ export default function InstitutionDetails() {
           </Card>
         </Col>
         <Col>
-          <DonateToInstitutionForm />
+          <DonateToInstitutionForm institutionUsername={username || ""} />
         </Col>
       </Row>
     </>

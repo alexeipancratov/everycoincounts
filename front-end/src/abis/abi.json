@@ -1,0 +1,325 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_newPrice",
+                "type": "uint256"
+            }
+        ],
+        "name": "changeCoinPrice",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_institution",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "_donatorName",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "_message",
+                "type": "string"
+            }
+        ],
+        "name": "countTheseCoins",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "_timestamp",
+                "type": "uint256"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_donator",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "string",
+                "name": "_institution",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_slicePrice",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "_donatorName",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "_message",
+                "type": "string"
+            }
+        ],
+        "name": "donationReceipt",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "_timestamp",
+                "type": "uint256"
+            },
+            {
+                "indexed": true,
+                "internalType": "string",
+                "name": "_institution",
+                "type": "string"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_to",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "_message",
+                "type": "string"
+            }
+        ],
+        "name": "fundsTransfer",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            },
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "_coinPrice",
+                "type": "uint256"
+            }
+        ],
+        "name": "newCoinPrice",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            },
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "_creator",
+                "type": "uint256"
+            }
+        ],
+        "name": "newInstitution",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_institution",
+                "type": "string"
+            },
+            {
+                "internalType": "address",
+                "name": "_to",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "string",
+                "name": "_message",
+                "type": "string"
+            }
+        ],
+        "name": "transfer",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_institution",
+                "type": "string"
+            },
+            {
+                "internalType": "address",
+                "name": "_to",
+                "type": "address"
+            }
+        ],
+        "name": "transferAll",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "stateMutability": "payable",
+        "type": "fallback"
+    },
+    {
+        "stateMutability": "payable",
+        "type": "receive"
+    },
+    {
+        "inputs": [],
+        "name": "coinPrice",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "donationsCounter",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "name": "donators",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "idDonator",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "donations",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "totalDonated",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "donatorsCounter",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "name": "institutions",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "idInstitution",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "donations",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "totalBalance",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "institutionsCounter",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }
+]
