@@ -9,7 +9,7 @@ Give institutions and non-profit organizations the ability to receive donations 
 
 ## The Solution 🔮
 
-An Open Source Code to support institutions and non-profit organizations to do good and help important causes by providing access to the web3 space.
+An Open Source Code to support institutions and non-profit organizations to do good and help important causes by providing access to the Web3 space.
 A blockchain solution that also offers a safe platform for donators to contribute to serious projects that impacts people's lives and can change histories.
 
 ## How it Works👷🏻
