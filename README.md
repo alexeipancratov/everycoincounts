@@ -1,4 +1,5 @@
 ![Every Coin Counts](./front-end/public/ECC-super-hero.png)
+<img width="1291" alt="ETH San Francisco 2022" src="https://user-images.githubusercontent.com/3188163/232239994-a3bbf6ca-c78c-4c3f-bd9d-13561e3bdc16.png">
 
 ## Outline of The Problem ⚠️
 
